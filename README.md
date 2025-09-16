@@ -48,7 +48,17 @@ This repository contains my work from the Udemy course
 - Day 15 – Coffee Machine (OOP Project)  
 - Day 20 – Snake Game (→ [snake-game repo](https://github.com/AmjadSaleh1/snake-game))  
 - Day 55 – Flask Movie Rating App (→ [flask-movie-rating-app repo](https://github.com/AmjadSaleh1/flask-movie-rating-app))  
-- … and more up to Day 64.
+- Day 55 – Flask Movie Rating App 
+- Day 56 – Blog with Users (Flask + SQLAlchemy)  
+- Day 57 – Authentication with Flask-Login  
+- Day 58 – Bootstrap & Flask styling  
+- Day 59 – REST APIs with Flask  
+- Day 60 – Capstone: Blog Website with Users + Authentication  
+- Day 61 – Data Science: Analyzing Google Trends  
+- Day 62 – Data Science: Analyzing Lego Dataset  
+- Day 63 – Data Science: Analyzing Fandango Movie Ratings  
+- Day 64 – Capstone: Top 10 Movies Website -> [Repo link](https://github.com/AmjadSaleh1/flask-movie-rating-app) 
+
 
 ---
 
