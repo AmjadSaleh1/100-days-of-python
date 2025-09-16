@@ -11,3 +11,10 @@ Thumbs.db
 dist/
 build/
 reports/
+.idea/*.bak
+*.env
+*.idea/
+*.vscode/
+*.bak
+.env*
+.env*
