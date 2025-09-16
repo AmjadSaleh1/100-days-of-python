@@ -57,7 +57,7 @@ This repository contains my work from the Udemy course
 - Day 61 – Data Science: Analyzing Google Trends  
 - Day 62 – Data Science: Analyzing Lego Dataset  
 - Day 63 – Data Science: Analyzing Fandango Movie Ratings  
-- Day 64 – Capstone: Top 10 Movies Website -> [Repo link](https://github.com/AmjadSaleh1/flask-movie-rating-app) 
+- Day 64 – Capstone: Top 10 Movies Website -> [Rating-Movie Repo link](https://github.com/AmjadSaleh1/Rating-Movies) 
 
 
 ---
