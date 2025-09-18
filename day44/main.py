@@ -33,6 +33,7 @@ sleep(5)
 schedule_div = driver.find_element(By.XPATH, '//*[@id="schedule-page"]')
 day_groups = schedule_div.find_elements(By.CLASS_NAME, "Schedule_dayGroup__y79__")
 
+#booking all tue and sat 6 pm classes.
 for card in day_groups:
     day_title = card.find_element(By.TAG_NAME, "h2").text
 
@@ -62,8 +63,20 @@ for card in day_groups:
                     print("Clicked!")
                     break
 
+my_booking_page = driver.find_element(By.ID, value="my-bookings-link")
+my_booking_page.click()
+sleep(3)
+
+booked_cards = driver.find_elements(By.CSS_SELECTOR, "#confirmed-bookings-section > div > "
+                                                     "div.MyBookings_bookingCard__VRdrR")
+all_classes_count = 0
+for c in booked_cards:
+    if "Tue" in c.text or "Sat" in c.text:
+        all_classes_count += 1
+
 print("\n--- BOOKING SUMMARY ---")
 print(f"Classes booked: {booked_count}")
 print(f"Waitlists joined: {waitlist_count}")
 print(f"Already booked/waitlisted: {already_booked_count}")
 print(f"Total Tuesday 6pm classes processed: {booked_count + waitlist_count + already_booked_count}")
+print(f"Total booked for Tuesday and Saturday Classes: {all_classes_count}")
