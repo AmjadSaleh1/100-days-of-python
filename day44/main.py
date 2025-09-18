@@ -4,9 +4,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from time import sleep
 
-booked_counter = 0
-listed = 0
-
+booked_count = 0
+waitlist_count = 0
+already_booked_count = 0
 
 URL = "https://appbrewery.github.io/gym/"
 
@@ -29,28 +29,41 @@ submit_button.click()
 
 #start booking
 sleep(5)
-day_title = driver.find_element(By.XPATH, '//*[@id="day-title-tue,-sep-23"]')
-day_div = day_title.find_element(By.XPATH, './..')
 
-for card in day_div.find_elements(By.CLASS_NAME, "ClassCard_card__KpCx5"):
-    class_time = card.find_element(By.CLASS_NAME, "ClassCard_classDetail__Z8Z8f").text
+schedule_div = driver.find_element(By.XPATH, '//*[@id="schedule-page"]')
+day_groups = schedule_div.find_elements(By.CLASS_NAME, "Schedule_dayGroup__y79__")
 
-    if "9:00 AM" in class_time:
-        button = card.find_element(By.TAG_NAME, "button")
-        if button.text == "Booked":
-            booked_counter += 1
-            print("already booked")
-            break
+for card in day_groups:
+    day_title = card.find_element(By.TAG_NAME, "h2").text
 
-        if button.text == "Waitlisted":
-            print("u are on the waitlist")
+    if "Tue," in day_title or "Sat," in day_title:
+        for time in card.find_elements(By.CLASS_NAME, "ClassCard_classDetail__Z8Z8f"):
+            time_text = time.text
+            if "6:00 PM" in time_text:
+                button = card.find_element(By.TAG_NAME, "button")
+                if button.text == "Booked":
+                    already_booked_count += 1
+                    print("already booked")
+                    break
 
-        if button.text == "Join Waitlist":
-            button.click()
-            print("you joined to the waitlist")
-            break
+                if button.text == "Waitlisted":
+                    print("u are on the waitlist")
+                    already_booked_count += 1
 
-        else:
-            button.click()
-            print("Clicked!")
-            break
+                if button.text == "Join Waitlist":
+                    button.click()
+                    waitlist_count += 1
+                    print("you joined to the waitlist")
+                    break
+
+                else:
+                    button.click()
+                    booked_count += 1
+                    print("Clicked!")
+                    break
+
+print("\n--- BOOKING SUMMARY ---")
+print(f"Classes booked: {booked_count}")
+print(f"Waitlists joined: {waitlist_count}")
+print(f"Already booked/waitlisted: {already_booked_count}")
+print(f"Total Tuesday 6pm classes processed: {booked_count + waitlist_count + already_booked_count}")
