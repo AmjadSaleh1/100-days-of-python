@@ -63,6 +63,5 @@ This repository contains my work from the Udemy course
 ---
 
 ## 🔗 Next Steps
-- Continue from Day 65 → Day 100.  
-- Polish and upload **major projects as separate repos** with screenshots & detailed READMEs.  
+- Continue from Day 65 → Day 100.
 
