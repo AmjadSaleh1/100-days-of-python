@@ -57,7 +57,8 @@ This repository contains my work from the Udemy course
 - Day 61 – Data Science: Analyzing Google Trends  
 - Day 62 – Data Science: Analyzing Lego Dataset  
 - Day 63 – Data Science: Analyzing Fandango Movie Ratings  
-- Day 64 – Capstone: Top 10 Movies Website -> [Rating-Movie Repo link](https://github.com/AmjadSaleh1/Rating-Movies) 
+- Day 64 – Capstone: Top 10 Movies Website -> [Rating-Movie Repo link](https://github.com/AmjadSaleh1/Rating-Movies)
+- Day 66 - Built a RESTful API with Flask, implementing CRUD operations using HTTP methods (GET, POST, PUT/PATCH, DELETE) and testing/documenting endpoints with Postman
 
 
 ---
